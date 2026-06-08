@@ -539,24 +539,25 @@ body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
    RESPONSIVO (TELÉFONOS MÓVILES)
    ============================ */
 @media (max-width: 768px) {
-    /* 1. Encabezado más compacto */
+    /* 1. Encabezado compacto */
     header { 
         padding: 12px 20px; 
         position: sticky; 
         top: 0;
         z-index: 1000;
         display: flex;
-        flex-direction: row; /* Mantiene el botón de la luna a la derecha */
+        flex-direction: row; 
         align-items: center;
     }
     header h1 { font-size: 1.2rem; }
-    header p { display: none; } /* Ocultamos el texto secundario para ahorrar espacio */
+    header p { display: none; }
     
-    /* 2. Cuadrícula ordenada a 2 columnas */
+    /* 2. Cuadrícula (Catálogo) */
     .catalog-grid {
-        grid-template-columns: repeat(2, 1fr); /* Fuerza exactamente 2 columnas */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 12px;
-        padding: 15px 10px;
+        /* El espacio de 100px abajo va aquí para que el catálogo baje y nada lo tape */
+        padding: 15px 10px 100px 10px; 
     }
     .product-card { padding: 15px 10px; }
     .product-img { font-size: 2.2rem; margin-bottom: 10px; }
@@ -565,32 +566,49 @@ body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
     .price { font-size: 0.85rem; padding: 4px 10px; }
     .add-to-cart-btn { padding: 8px; font-size: 0.8rem; }
     
-    /* 3. Posición perfecta para el carrito flotante */
-    .cart-btn.floating-cart {
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        font-size: 1.4rem;
-        z-index: 1050;
-    }
-
-    /* 4. Posición perfecta para WhatsApp */
+    /* 3. Botón de WhatsApp (Círculo Perfecto) */
     .fab-container { 
         bottom: 20px; 
         left: 20px; 
         z-index: 1050;
     }
-    .fab-text { display: none; } /* Ocultamos el texto "¡Cotiza aquí!" para que no estorbe */
-    .fab-btn { padding: 12px; width: 60px; height: 60px; justify-content: center; border-radius: 50%; }
-    .fab-btn i { font-size: 1.8rem; margin: 0; }
-    
-    /* 5. Espacio extra al final de la página (para que los botones no tapen el footer ni los productos) */
-    footer {
-        padding-bottom: 100px; 
+    .fab-text { 
+        display: none !important; /* Quita el letrero "Cotiza aquí" */
+    } 
+    .fab-btn { 
+        width: 55px; 
+        height: 55px; 
+        padding: 0;
+        border-radius: 50% !important; /* Lo fuerza a ser redondo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0 !important; /* TRUCO: Oculta el número de celular */
+    }
+    .fab-btn i { 
+        font-size: 2rem !important; /* Deja solo el logo de WhatsApp grande */
+        margin: 0; 
     }
 
-    /* 6. Ocultar botones flotantes si el carrito se abre */
+    /* 4. Carrito Flotante */
+    .cart-btn.floating-cart {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+        z-index: 1050;
+    }
+    
+    /* 5. Pie de página (Footer) ABAJO de todo */
+    footer {
+        position: relative !important; /* Fuerza a que no flote ni se superponga */
+        bottom: auto !important;
+        padding: 25px !important;
+        margin-top: 0;
+    }
+
+    /* Oculta los botones si el panel del carrito está abierto */
     body.cart-is-open .fab-container,
     body.cart-is-open .cart-btn.floating-cart {
         display: none !important;
