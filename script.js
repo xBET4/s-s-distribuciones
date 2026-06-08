@@ -30,14 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
         cartPanel.classList.add('open');
         cartOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('cart-is-open'); // <--- NUEVA LÍNEA
     }
+    
     function closeCart() {
         cartPanel.classList.remove('open');
         cartOverlay.classList.remove('active');
         document.body.style.overflow = '';
-        waOptions.style.display = 'none';
+        document.body.classList.remove('cart-is-open'); // <--- NUEVA LÍNEA
     }
-
+    
     cartToggle.addEventListener('click', () => cartPanel.classList.contains('open') ? closeCart() : openCart());
     cartClose.addEventListener('click', closeCart);
     cartOverlay.addEventListener('click', closeCart);
