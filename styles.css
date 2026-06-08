@@ -566,27 +566,28 @@ body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
     .price { font-size: 0.85rem; padding: 4px 10px; }
     .add-to-cart-btn { padding: 8px; font-size: 0.8rem; }
     
-    /* 3. Botón de WhatsApp (Círculo Perfecto) */
+/* 3. Botón de WhatsApp (Estilo Original con número) */
     .fab-container { 
         bottom: 20px; 
-        left: 20px; 
+        left: 20px; /* Se queda a la izquierda para no tapar el carrito */
         z-index: 1050;
     }
     .fab-text { 
-        display: none !important; /* Quita el letrero "Cotiza aquí" */
+        display: block !important; /* Vuelve a mostrar el texto "¡Cotiza aquí!" */
     } 
     .fab-btn { 
-        width: 55px; 
-        height: 55px; 
-        padding: 0;
-        border-radius: 50% !important; /* Lo fuerza a ser redondo */
+        width: auto !important; 
+        height: auto !important; 
+        padding: 10px 15px !important; /* Le devuelve el espacio a los lados */
+        border-radius: 50px !important; /* Forma de pastilla alargada */
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0 !important; /* TRUCO: Oculta el número de celular */
+        font-size: 0.9rem !important; /* Vuelve a mostrar los números */
+        gap: 8px; /* Espacio entre el logo de WhatsApp y el número */
     }
     .fab-btn i { 
-        font-size: 2rem !important; /* Deja solo el logo de WhatsApp grande */
+        font-size: 1.3rem !important; /* Tamaño normal del ícono */
         margin: 0; 
     }
 
