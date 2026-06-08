@@ -40,7 +40,14 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-header h1 { color: var(--primary-color); font-size: 1.6rem; margin-bottom: 5px; }
+/* Tamaño y estilo para tu nuevo logo */
+.img-logo {
+    height: 65px; /* Ajusta este número si lo quieres más grande o pequeño */
+    width: auto;
+    border-radius: 8px; /* Le da bordes ligeramente redondeados */
+    margin-bottom: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
 .theme-btn {
     background: transparent;
