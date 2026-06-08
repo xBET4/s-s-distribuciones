@@ -40,15 +40,13 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Tamaño y estilo para tu nuevo logo */
+/* Tamaño y estilo para tu ícono limpio */
 .img-logo {
-    height: 65px;
+    height: 38px; /* Tamaño ajustado para que quede a la altura de las letras */
     width: auto;
-    border-radius: 8px; /* Bordes redondeados */
+    margin-right: 10px; /* Separación entre el camioncito y el texto */
+    vertical-align: middle; /* Asegura que no quede más arriba o abajo que las letras */
     margin-bottom: 5px;
-    background-color: #ffffff; /* Le ponemos un fondo blanco sólido temporal */
-    padding: 4px 8px; /* Un poco de espacio para que no se pegue a los bordes */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .theme-btn {
