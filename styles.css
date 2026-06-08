@@ -600,14 +600,19 @@ body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
         z-index: 1050;
     }
     
-    /* 5. Pie de página (Footer) ABAJO de todo */
-    footer {
-        position: relative !important; /* Fuerza a que no flote ni se superponga */
-        bottom: auto !important;
-        padding: 25px !important;
-        margin-top: 0;
-    }
-
+/* Pie de página estático al final del documento */
+footer {
+    display: block !important;
+    width: 100% !important; /* Obliga a ocupar toda la pantalla de lado a lado */
+    text-align: center;
+    padding: 25px;
+    background-color: var(--secondary-color);
+    color: white;
+    margin-top: 60px; /* Da un buen respiro después de los productos */
+    position: relative !important; /* Evita que flote o se monte sobre otros elementos */
+    clear: both;
+    z-index: 10;
+}
     /* Oculta los botones si el panel del carrito está abierto */
     body.cart-is-open .fab-container,
     body.cart-is-open .cart-btn.floating-cart {
