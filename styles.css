@@ -535,23 +535,67 @@ body.cart-is-open .cart-btn.floating-cart {
 body.dark-mode .add-to-cart-btn { background: var(--primary-color); }
 body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
 
-/* Responsivo */
+/* ============================
+   RESPONSIVO (TELÉFONOS MÓVILES)
+   ============================ */
 @media (max-width: 768px) {
-    header { flex-direction: column; text-align: center; gap: 10px; position: relative; }
-    .fab-container { bottom: 15px; left: 15px; } 
-    .fab-btn { padding: 10px 15px; font-size: 0.9rem; }
-    @media (max-width: 768px) {
-    /* ... lo que ya tenías ... */
+    /* 1. Encabezado más compacto */
+    header { 
+        padding: 12px 20px; 
+        position: sticky; 
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row; /* Mantiene el botón de la luna a la derecha */
+        align-items: center;
+    }
+    header h1 { font-size: 1.2rem; }
+    header p { display: none; } /* Ocultamos el texto secundario para ahorrar espacio */
     
+    /* 2. Cuadrícula ordenada a 2 columnas */
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr); /* Fuerza exactamente 2 columnas */
+        gap: 12px;
+        padding: 15px 10px;
+    }
+    .product-card { padding: 15px 10px; }
+    .product-img { font-size: 2.2rem; margin-bottom: 10px; }
+    .product-card h3 { font-size: 0.9rem; margin-bottom: 5px; }
+    .product-card p { font-size: 0.75rem; height: 30px; overflow: hidden; }
+    .price { font-size: 0.85rem; padding: 4px 10px; }
+    .add-to-cart-btn { padding: 8px; font-size: 0.8rem; }
+    
+    /* 3. Posición perfecta para el carrito flotante */
     .cart-btn.floating-cart {
-        bottom: 15px;
-        right: 15px;
-        width: 55px;
-        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
         font-size: 1.4rem;
+        z-index: 1050;
+    }
+
+    /* 4. Posición perfecta para WhatsApp */
+    .fab-container { 
+        bottom: 20px; 
+        left: 20px; 
+        z-index: 1050;
+    }
+    .fab-text { display: none; } /* Ocultamos el texto "¡Cotiza aquí!" para que no estorbe */
+    .fab-btn { padding: 12px; width: 60px; height: 60px; justify-content: center; border-radius: 50%; }
+    .fab-btn i { font-size: 1.8rem; margin: 0; }
+    
+    /* 5. Espacio extra al final de la página (para que los botones no tapen el footer ni los productos) */
+    footer {
+        padding-bottom: 100px; 
+    }
+
+    /* 6. Ocultar botones flotantes si el carrito se abre */
+    body.cart-is-open .fab-container,
+    body.cart-is-open .cart-btn.floating-cart {
+        display: none !important;
     }
 }
-    
     /* NUEVA REGLA: Oculta el botón flotante si el carrito está abierto */
     body.cart-is-open .fab-container {
         display: none;
