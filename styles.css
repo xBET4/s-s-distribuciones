@@ -509,6 +509,11 @@ body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
 /* Responsivo */
 @media (max-width: 768px) {
     header { flex-direction: column; text-align: center; gap: 10px; position: relative; }
-    .fab-container { bottom: 15px; left: 15px; } /* <-- Cambiado de right a left */
+    .fab-container { bottom: 15px; left: 15px; } 
     .fab-btn { padding: 10px 15px; font-size: 0.9rem; }
+    
+    /* NUEVA REGLA: Oculta el botón flotante si el carrito está abierto */
+    body.cart-is-open .fab-container {
+        display: none;
+    }
 }
