@@ -247,36 +247,55 @@ footer { text-align: center; padding: 25px; background-color: var(--secondary-co
     gap: 12px;
 }
 
-.cart-btn {
-    position: relative;
-    background: transparent;
-    border: 2px solid white;
+/* Botón carrito flotante */
+.cart-btn.floating-cart {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--primary-color);
     color: white;
-    padding: 8px 12px;
+    border: none;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(242, 101, 34, 0.4);
+    z-index: 1050; /* Queda por encima del catálogo */
     transition: var(--transition);
 }
-.cart-btn:hover { background: white; color: var(--secondary-color); transform: scale(1.1); }
+
+.cart-btn.floating-cart:hover { 
+    transform: scale(1.1) translateY(-5px); 
+    background-color: #d95a1c;
+}
 
 .cart-count {
     position: absolute;
-    top: -8px;
-    right: -8px;
-    background: var(--primary-color);
+    top: 0;
+    right: 0;
+    background: #e74c3c;
     color: white;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid white; /* Resalta el numerito */
     transition: transform 0.2s;
 }
 .cart-count.bump { transform: scale(1.4); }
+
+/* Oculta el carrito flotante cuando abres el panel lateral */
+body.cart-is-open .cart-btn.floating-cart {
+    display: none;
+}
 
 /* Overlay oscuro */
 .cart-overlay {
@@ -521,6 +540,17 @@ body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
     header { flex-direction: column; text-align: center; gap: 10px; position: relative; }
     .fab-container { bottom: 15px; left: 15px; } 
     .fab-btn { padding: 10px 15px; font-size: 0.9rem; }
+    @media (max-width: 768px) {
+    /* ... lo que ya tenías ... */
+    
+    .cart-btn.floating-cart {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+}
     
     /* NUEVA REGLA: Oculta el botón flotante si el carrito está abierto */
     body.cart-is-open .fab-container {
