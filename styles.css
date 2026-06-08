@@ -44,13 +44,11 @@ header {
 .img-logo {
     height: 65px;
     width: auto;
-    border-radius: 8px;
+    border-radius: 8px; /* Bordes redondeados */
     margin-bottom: 5px;
-    /* Este filtro hace que el fondo claro se mezcle y "desaparezca" */
-    mix-blend-mode: multiply; 
-    /* Le damos un fondo blanco temporal para que no se pierdan las letras azules con el fondo oscuro del menú */
-    background-color: white; 
-    padding: 5px;
+    background-color: #ffffff; /* Le ponemos un fondo blanco sólido temporal */
+    padding: 4px 8px; /* Un poco de espacio para que no se pegue a los bordes */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .theme-btn {
