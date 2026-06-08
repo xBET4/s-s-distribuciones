@@ -27,6 +27,7 @@ body.dark-mode {
 body { background-color: var(--bg-color); color: var(--text-dark); transition: var(--transition); }
 
 /* Header pegajoso (Sticky) */
+/* Header pegajoso (Sticky) */
 header {
     background-color: var(--secondary-color);
     color: white;
@@ -40,13 +41,15 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Tamaño y estilo para tu ícono limpio */
-.img-logo {
-    height: 38px; /* Tamaño ajustado para que quede a la altura de las letras */
-    width: auto;
-    margin-right: 10px; /* Separación entre el camioncito y el texto */
-    vertical-align: middle; /* Asegura que no quede más arriba o abajo que las letras */
-    margin-bottom: 5px;
+header h1 { 
+    color: var(--primary-color); 
+    font-size: 1.6rem; 
+    margin-bottom: 5px; 
+}
+
+/* Separación para el dibujo del camión */
+header h1 i {
+    margin-right: 10px;
 }
 
 .theme-btn {
