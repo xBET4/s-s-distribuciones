@@ -591,14 +591,14 @@ body.dark-mode .add-to-cart-btn:hover { background: #e0551a; }
         margin: 0; 
     }
 
-    /* 4. Carrito Flotante */
+/* 4. Carrito Flotante */
     .cart-btn.floating-cart {
         bottom: 20px;
         right: 20px;
         width: 55px;
         height: 55px;
         font-size: 1.4rem;
-        z-index: 1050;
+        z-index: 9999 !important; /* Subimos esto al máximo para que NADA lo tape */
     }
     
     /* Oculta los botones si el panel del carrito está abierto */
