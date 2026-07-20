@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&S Distribuciones - En Mantenimiento</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>S&S Distribuciones - Gracias por todo</title>
     <style>
         /* Variables de la marca */
         :root {
@@ -12,7 +11,7 @@
             --secondary-color: #0b2f4f; /* Azul oscuro S&S */
             --bg-color: #f4f7fb;
             --text-dark: #333333;
-            --text-light: #666666;
+            --text-light: #555555;
         }
 
         * {
@@ -31,42 +30,32 @@
             min-height: 100vh;
             text-align: center;
             padding: 20px;
-            overflow: hidden;
         }
 
-        /* Contenedor principal con animación de aparición */
-        .error-container {
+        /* Contenedor del mensaje de despedida */
+        .farewell-container {
             background: white;
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
+            padding: 60px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 650px;
             width: 100%;
-            animation: fadeIn 0.8s ease-out forwards;
-            position: relative;
+            border-top: 6px solid var(--primary-color);
+            animation: fadeIn 1.2s ease-out forwards;
         }
 
-        /* Ícono animado flotante */
-        .animated-icon {
-            font-size: 5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Textos */
         h1 {
             color: var(--secondary-color);
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
         }
 
         p {
             color: var(--text-light);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
         .highlight {
@@ -74,139 +63,48 @@
             font-weight: bold;
         }
 
-        /* Puntos de carga animados */
-        .loading-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 30px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: var(--secondary-color);
-            border-radius: 50%;
-            animation: bounce 1.4s infinite ease-in-out both;
-        }
-
-        .dot:nth-child(1) { animation-delay: -0.32s; }
-        .dot:nth-child(2) { animation-delay: -0.16s; }
-
-        /* Botones de WhatsApp de emergencia */
-        .contact-box {
-            background-color: var(--bg-color);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px dashed #ccc;
-        }
-
-        .contact-box p {
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+        /* Firma final */
+        .signature {
+            margin-top: 40px;
+            font-size: 1.05rem;
             color: var(--secondary-color);
-            font-weight: bold;
+            font-weight: 600;
+            border-top: 1px solid #eaeaea;
+            padding-top: 25px;
         }
 
-        .whatsapp-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .wa-btn {
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .wa-btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-        }
-
-        /* --- KEYFRAMES (Animaciones) --- */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
+        /* Animación suave de entrada */
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1); }
-        }
-
-        /* Elementos decorativos de fondo */
-        .bg-shape {
-            position: absolute;
-            z-index: -1;
-            border-radius: 50%;
-            opacity: 0.1;
-        }
-        .shape1 {
-            width: 300px;
-            height: 300px;
-            background: var(--primary-color);
-            top: -100px;
-            left: -100px;
-        }
-        .shape2 {
-            width: 200px;
-            height: 200px;
-            background: var(--secondary-color);
-            bottom: -50px;
-            right: -50px;
+        
+        /* Responsivo para móviles */
+        @media (max-width: 600px) {
+            .farewell-container {
+                padding: 40px 25px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.05rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Figuras decorativas de fondo -->
-    <div class="bg-shape shape1"></div>
-    <div class="bg-shape shape2"></div>
-
-    <div class="error-container">
-        <!-- Ícono flotante animado -->
-        <div class="animated-icon">
-            <i class="fa-solid fa-mug-hot"></i>
-        </div>
+    <div class="farewell-container">
+        <h1>Gracias por todo</h1>
         
-        <h1>¡Ups! Necesitamos un café extra...</h1>
+        <p>Queremos informarles que <span class="highlight">S&S Distribuciones</span> ha cerrado sus operaciones de manera definitiva.</p>
         
-        <p>Nuestros servidores se están tomando una breve pausa técnica. <span class="highlight">S&S Distribuciones</span> está realizando mantenimiento en este momento para mejorar tu experiencia.</p>
+        <p>Agradecemos de corazón a todos nuestros clientes, proveedores y colaboradores por la confianza, lealtad y el apoyo incondicional que nos brindaron durante todo este tiempo. Fue un verdadero honor servirles y formar parte de sus negocios y hogares.</p>
         
-        <!-- Puntos animados de "trabajando" -->
-        <div class="loading-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <!-- Opciones de contacto para no perder ventas -->
-        <div class="contact-box">
-            <p>¡Pero nuestro inventario no se detiene! Haz tus pedidos directamente por WhatsApp:</p>
-            <div class="whatsapp-buttons">
-                <a href="https://wa.me/593963664620" target="_blank" class="wa-btn">
-                    <i class="fa-brands fa-whatsapp"></i> 096 366 4620
-                </a>
-                <a href="https://wa.me/593967860421" target="_blank" class="wa-btn">
-                    <i class="fa-brands fa-whatsapp"></i> 096 786 0421
-                </a>
-            </div>
+        <div class="signature">
+            Atentamente,<br>
+            La familia de S&S Distribuciones
         </div>
     </div>
 
