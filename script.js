@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Seleccionar elementos del HTML
+    // ----------------------------------------------------
+    // 1. LÓGICA DE INTERFAZ (Filtros, Buscador, Tema Oscuro)
+    // ----------------------------------------------------
     const searchBar = document.getElementById('searchBar');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const products = document.querySelectorAll('.product-card');
     const noResults = document.getElementById('noResults');
     const themeToggle = document.getElementById('theme-toggle');
 
-    // 2. Lógica del Modo Oscuro
-    // Revisar si el usuario ya tenía el modo oscuro guardado en su navegador
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
         themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
@@ -15,74 +15,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
-        
         if (document.body.classList.contains('dark-mode')) {
             themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-            localStorage.setItem('theme', 'dark'); // Guardar preferencia
+            localStorage.setItem('theme', 'dark');
         } else {
             themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
             localStorage.setItem('theme', 'light');
         }
     });
 
-    // 3. Función Principal de Filtrado
     const filterProducts = (category) => {
         let hasVisibleProducts = false;
-
         products.forEach(product => {
-            // Si la categoría es "all" o si la tarjeta tiene la clase de la categoría
             if (category === 'all' || product.classList.contains(category)) {
-                product.classList.remove('hide'); // Mostrar
+                product.classList.remove('hide');
                 hasVisibleProducts = true;
             } else {
-                product.classList.add('hide'); // Ocultar
+                product.classList.add('hide');
             }
         });
-
-        // Mostrar u ocultar el mensaje de "No hay resultados"
-        if (hasVisibleProducts) {
-            noResults.classList.add('hide');
-        } else {
-            noResults.classList.remove('hide');
-        }
+        hasVisibleProducts ? noResults.classList.add('hide') : noResults.classList.remove('hide');
     };
 
-    // 4. Lógica de los Botones de Categorías
     filterBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            // Quitar clase 'active' de todos los botones
             filterBtns.forEach(b => b.classList.remove('active'));
-            
-            // Añadir clase 'active' al botón clicado
             e.target.classList.add('active');
-            
-            // Obtener el filtro ('cafe', 'snacks', etc.)
-            const filterValue = e.target.getAttribute('data-filter');
-            
-            // Ejecutar la función de filtrado
-            filterProducts(filterValue);
-            
-            // Limpiar la barra de búsqueda al usar botones
+            filterProducts(e.target.getAttribute('data-filter'));
             searchBar.value = '';
         });
     });
 
-    // 5. Lógica de la Barra de Búsqueda
     searchBar.addEventListener('input', (e) => {
         const searchTerm = e.target.value.toLowerCase().trim();
         let hasVisibleProducts = false;
 
-        // Si el usuario escribe algo, resetear los botones al botón "Todo"
         if (searchTerm !== "") {
             filterBtns.forEach(b => b.classList.remove('active'));
             document.querySelector('[data-filter="all"]').classList.add('active');
         }
 
         products.forEach(product => {
-            // Obtener todo el texto dentro de la tarjeta (título, precio, gramos)
             const productText = product.textContent.toLowerCase();
-
-            // Si el texto de la tarjeta incluye lo que se buscó
             if (productText.includes(searchTerm)) {
                 product.classList.remove('hide');
                 hasVisibleProducts = true;
@@ -90,12 +64,148 @@ document.addEventListener('DOMContentLoaded', () => {
                 product.classList.add('hide');
             }
         });
-
-        // Mostrar u ocultar el mensaje de "No hay resultados"
-        if (hasVisibleProducts) {
-            noResults.classList.add('hide');
-        } else {
-            noResults.classList.remove('hide');
-        }
+        hasVisibleProducts ? noResults.classList.add('hide') : noResults.classList.remove('hide');
     });
+
+    // ----------------------------------------------------
+    // 2. LÓGICA DEL CARRITO DE COMPRAS
+    // ----------------------------------------------------
+    let cart = []; // Array donde se guardan los productos
+
+    const cartBtn = document.getElementById('cart-btn');
+    const cartModal = document.getElementById('cart-modal');
+    const closeCart = document.getElementById('close-cart');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+    const cartCountElement = document.getElementById('cart-count');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    // Abrir/Cerrar Modal del Carrito
+    cartBtn.addEventListener('click', () => cartModal.classList.add('show'));
+    closeCart.addEventListener('click', () => cartModal.classList.remove('show'));
+    window.addEventListener('click', (e) => {
+        if (e.target === cartModal) cartModal.classList.remove('show');
+    });
+
+    // Agregar producto al carrito
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const name = e.target.getAttribute('data-name');
+            const price = parseFloat(e.target.getAttribute('data-price'));
+
+            // Revisar si ya está en el carrito
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({ name: name, price: price, qty: 1 });
+            }
+
+            // Efecto visual en el botón
+            const originalText = e.target.innerHTML;
+            e.target.innerHTML = '<i class="fa-solid fa-check"></i> Agregado';
+            e.target.style.backgroundColor = '#25D366'; // Se pone verde un segundo
+            setTimeout(() => {
+                e.target.innerHTML = originalText;
+                e.target.style.backgroundColor = '';
+            }, 1000);
+
+            updateCartUI();
+        });
+    });
+
+    // Actualizar visualmente el carrito
+    const updateCartUI = () => {
+        cartItemsContainer.innerHTML = '';
+        let total = 0;
+        let totalItems = 0;
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p style="text-align:center; color:#888; margin-top: 20px;">Tu carrito está vacío.</p>';
+        } else {
+            cart.forEach((item, index) => {
+                total += item.price * item.qty;
+                totalItems += item.qty;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                
+                // Si el precio es 0, significa "Consultar Precio"
+                let priceText = item.price > 0 ? `$${(item.price * item.qty).toFixed(2)}` : 'Por cotizar';
+
+                itemDiv.innerHTML = `
+                    <div class="item-info">
+                        <h4>${item.name}</h4>
+                        <p>${priceText}</p>
+                    </div>
+                    <div class="item-controls">
+                        <button class="qty-btn minus" data-index="${index}">-</button>
+                        <span>${item.qty}</span>
+                        <button class="qty-btn plus" data-index="${index}">+</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemDiv);
+            });
+        }
+
+        cartTotalElement.innerText = total.toFixed(2);
+        cartCountElement.innerText = totalItems;
+
+        // Asignar eventos a los botones de sumar/restar en el carrito
+        document.querySelectorAll('.qty-btn.minus').forEach(btn => {
+            btn.addEventListener('click', (e) => updateQuantity(e.target.getAttribute('data-index'), -1));
+        });
+        document.querySelectorAll('.qty-btn.plus').forEach(btn => {
+            btn.addEventListener('click', (e) => updateQuantity(e.target.getAttribute('data-index'), 1));
+        });
+    };
+
+    // Función para sumar o restar cantidades
+    const updateQuantity = (index, change) => {
+        if (cart[index].qty + change > 0) {
+            cart[index].qty += change;
+        } else {
+            cart.splice(index, 1); // Lo elimina si llega a 0
+        }
+        updateCartUI();
+    };
+
+    // ----------------------------------------------------
+    // 3. ENVÍO POR WHATSAPP
+    // ----------------------------------------------------
+    checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert("Agrega productos al carrito primero.");
+            return;
+        }
+
+        // Armar el mensaje
+        let message = "Hola *S&S Distribuciones*, me gustaría hacer el siguiente pedido:\n\n";
+        let total = 0;
+
+        cart.forEach(item => {
+            message += `▪️ ${item.qty}x ${item.name}`;
+            if (item.price > 0) {
+                message += ` ($${(item.price * item.qty).toFixed(2)})\n`;
+                total += (item.price * item.qty);
+            } else {
+                message += ` (Precio a consultar)\n`;
+            }
+        });
+
+        message += `\n*Total Estimado:* $${total.toFixed(2)}`;
+        
+        // Codificar el texto para URL
+        const encodedMessage = encodeURIComponent(message);
+        
+        // Número de WhatsApp (puedes cambiarlo si deseas que vaya al otro número)
+        const whatsappNumber = "593963664620";
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        // Abrir WhatsApp en una pestaña nueva
+        window.open(whatsappURL, '_blank');
+    });
+
+    // Iniciar con carrito vacío en pantalla
+    updateCartUI();
 });
