@@ -193,6 +193,78 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // ----------------------------------------------------
+    // 4. LÓGICA DE LA PESTAÑA DE SABORES (MODAL DE VARIANTES)
+    // ----------------------------------------------------
+    const variantModal = document.getElementById('variant-modal');
+    const closeVariant = document.getElementById('close-variant');
+    const variantSelect = document.getElementById('variant-select');
+    const variantProductName = document.getElementById('variant-product-name');
+    const confirmVariantBtn = document.getElementById('confirm-variant-btn');
+
+    let currentVariantProduct = null;
+
+    // Al hacer clic en "Elegir Sabor"
+    document.querySelectorAll('.open-variant-modal').forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Prevenir que se agregue directamente al carrito si tenía la clase anterior
+            e.preventDefault(); 
+            
+            const btn = e.currentTarget;
+            const name = btn.getAttribute('data-name');
+            const price = btn.getAttribute('data-price');
+            const options = btn.getAttribute('data-options').split(','); // Separa los sabores por las comas
+
+            currentVariantProduct = { name, price };
+            variantProductName.innerText = name;
+
+            // Limpiar y llenar la lista desplegable de sabores
+            variantSelect.innerHTML = '';
+            options.forEach(opt => {
+                variantSelect.innerHTML += `<option value="${opt}">${opt}</option>`;
+            });
+
+            variantModal.classList.add('show');
+        });
+    });
+
+    // Cerrar la pestaña de sabores
+    closeVariant.addEventListener('click', () => variantModal.classList.remove('show'));
+    window.addEventListener('click', (e) => {
+        if (e.target === variantModal) variantModal.classList.remove('show');
+    });
+
+    // Confirmar y agregar al carrito final
+    confirmVariantBtn.addEventListener('click', (e) => {
+        if (!currentVariantProduct) return;
+        
+        const selectedFlavor = variantSelect.value;
+        const finalName = `${currentVariantProduct.name} (${selectedFlavor})`;
+        const price = parseFloat(currentVariantProduct.price);
+
+        // Lógica para agregarlo al carrito
+        const existingItem = cart.find(item => item.name === finalName);
+        if (existingItem) {
+            existingItem.qty++;
+        } else {
+            cart.push({ name: finalName, price: price, qty: 1 });
+        }
+
+        // Efecto visual de confirmación en el botón
+        const originalText = e.target.innerHTML;
+        e.target.innerHTML = '<i class="fa-solid fa-check"></i> ¡Agregado!';
+        e.target.style.backgroundColor = '#25D366'; 
+        
+        updateCartUI(); // Actualiza el carrito superior
+
+        // Ocultar la ventana después de 1 segundo
+        setTimeout(() => {
+            e.target.innerHTML = originalText;
+            e.target.style.backgroundColor = '';
+            variantModal.classList.remove('show');
+        }, 800);
+    });
+
         message += `\n*Total Estimado:* $${total.toFixed(2)}`;
         
         // Codificar el texto para URL
