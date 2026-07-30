@@ -17,7 +17,6 @@
             <p>La mejor calidad del mercado la encuentras aquí.</p>
         </div>
         <div class="header-actions">
-            <!-- Botón del Carrito Nuevo -->
             <button id="cart-btn" class="cart-btn">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span id="cart-count" class="cart-count">0</span>
@@ -408,23 +407,24 @@
         </div>
 
         <!-- LICORES -->
+        
+        <!-- ESTOS DOS AHORA ABREN LA VENTANA DE SABORES -->
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-martini-glass-citrus"></i></div>
             <h3>Cristal Colors</h3>
             <p>750 ml</p>
             <span class="price-tag">$4.00</span>
-            <!-- Botón modificado para abrir la pestaña de sabores -->
-            <button class="open-variant-modal add-to-cart-btn" data-name="Cristal Colors 750ml" data-price="4.00" data-options="Tamarindo Loco,Fashion Cherry,Bomb Peach,Crazy Mango,Bikini Paradise,Passion Fruit,Naranjilla Crush"><i class="fa-solid fa-list-ul"></i> Elegir Sabor</button>
+            <button class="open-variant-modal" data-name="Cristal Colors 750ml" data-price="4.00" data-options="Tamarindo Loco,Fashion Cherry,Bomb Peach,Crazy Mango,Bikini Paradise,Passion Fruit,Naranjilla Crush"><i class="fa-solid fa-list-ul"></i> Elegir Sabor</button>
         </div>
-
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-cocktail"></i></div>
             <h3>Licores de la Tierrita</h3>
             <p>Licores Semisecos</p>
             <span class="price-tag">$0.80</span>
-            <!-- Botón modificado para abrir la pestaña de sabores -->
-            <button class="open-variant-modal add-to-cart-btn" data-name="Licor de la Tierrita" data-price="0.80" data-options="Sabor a Coco,Sabor a Capuchino,Sabor a Tamarindo"><i class="fa-solid fa-list-ul"></i> Elegir Sabor</button>
+            <button class="open-variant-modal" data-name="Licor de la Tierrita" data-price="0.80" data-options="Sabor a Coco,Sabor a Capuchino,Sabor a Tamarindo"><i class="fa-solid fa-list-ul"></i> Elegir Sabor</button>
         </div>
+        <!-- ============================================== -->
+
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-whiskey-glass"></i></div>
             <h3>Cristal Ardiente</h3>
@@ -554,6 +554,21 @@
                     <i class="fa-brands fa-whatsapp"></i> Enviar pedido a WhatsApp
                 </button>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal para Elegir Sabor -->
+    <div class="cart-modal" id="variant-modal">
+        <div class="cart-content" style="max-width: 400px; text-align: center;">
+            <span class="close-cart" id="close-variant">&times;</span>
+            <h2 style="margin-bottom: 10px;">🍾 Elige el sabor</h2>
+            <h3 id="variant-product-name" style="color: var(--accent-color); margin-bottom: 20px; font-size: 1.1rem;"></h3>
+            
+            <select id="variant-select" style="width: 100%; padding: 12px; font-size: 1rem; margin-bottom: 20px; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); outline: none;">
+                <!-- Las opciones se inyectan solas desde el JavaScript -->
+            </select>
+            
+            <button class="add-to-cart" id="confirm-variant-btn"><i class="fa-solid fa-cart-plus"></i> Confirmar y Agregar</button>
         </div>
     </div>
 
