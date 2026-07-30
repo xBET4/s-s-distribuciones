@@ -42,27 +42,6 @@ header {
 .header-actions { display: flex; align-items: center; gap: 15px; }
 .theme-btn { background: transparent; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-/* Botón del Carrito en Cabecera */
-.cart-btn {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    position: relative;
-}
-.cart-count {
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    background-color: var(--accent-color);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 50%;
-}
-
 /* =========================================
    BUSCADOR Y FILTROS
 ========================================= */
@@ -100,6 +79,54 @@ header {
     transition: background-color 0.2s;
 }
 .add-to-cart:hover, .open-variant-modal:hover { background-color: #d85515; }
+
+
+/* =========================================
+   NUEVO: BOTÓN FLOTANTE DEL CARRITO
+========================================= */
+.floating-cart-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.floating-cart-btn:hover {
+    transform: scale(1.1);
+    background-color: #d85515;
+}
+
+.floating-cart-btn .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--primary-color); 
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 5px 9px;
+    border-radius: 50%;
+    border: 3px solid var(--bg-color);
+}
+
+/* Botones WhatsApp Flotantes */
+.fab-container { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 999; }
+.fab-text { background-color: var(--primary-color); color: white; padding: 5px 10px; border-radius: 8px; font-size: 0.8rem; text-align: center; font-weight: bold; }
+.fab-btn { background-color: #25D366; color: white; text-decoration: none; padding: 10px 15px; border-radius: 25px; display: flex; align-items: center; gap: 8px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2); transition: transform 0.2s; }
+.fab-btn:hover { transform: scale(1.05); }
 
 /* =========================================
    MODALES (CARRITO Y SABORES)
