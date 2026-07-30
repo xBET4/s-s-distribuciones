@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&S Distribuciones - Catálogo 2026</title>
+    <title>S&S Distribuciones - Tienda y Catálogo 2026</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Íconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,6 +17,11 @@
             <p>La mejor calidad del mercado la encuentras aquí.</p>
         </div>
         <div class="header-actions">
+            <!-- Botón del Carrito Nuevo -->
+            <button id="cart-btn" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
             <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button>
         </div>
     </header>
@@ -47,431 +52,506 @@
         <!-- CAFÉ -->
         <div class="product-card cafe">
             <div class="product-img"><i class="fa-solid fa-mug-hot"></i></div>
-            <h3>Minerva Clásico (70g)[cite: 1]</h3>
-            <p>Rinde 14 tazas[cite: 1]</p>
-            <span class="price">$0.82 ctvs la Unidad[cite: 1]</span>
+            <h3>Minerva Clásico (70g)</h3>
+            <p>Rinde 14 tazas</p>
+            <span class="price-tag">$0.82 c/u</span>
+            <button class="add-to-cart" data-name="Minerva Clásico (70g)" data-price="0.82"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card cafe">
             <div class="product-img"><i class="fa-solid fa-mug-hot"></i></div>
-            <h3>Minerva Clásico (180g)[cite: 1]</h3>
-            <p>Rinde 36 tazas[cite: 1]</p>
-            <span class="price">$2.75 ctvs la Unidad[cite: 1]</span>
+            <h3>Minerva Clásico (180g)</h3>
+            <p>Rinde 36 tazas</p>
+            <span class="price-tag">$2.75 c/u</span>
+            <button class="add-to-cart" data-name="Minerva Clásico (180g)" data-price="2.75"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card cafe">
             <div class="product-img"><i class="fa-solid fa-mug-hot"></i></div>
-            <h3>Minerva Clásico (360g)[cite: 1]</h3>
-            <p>Rinde 72 tazas[cite: 1]</p>
-            <span class="price">$3.90 ctvs la Unidad[cite: 1]</span>
+            <h3>Minerva Clásico (360g)</h3>
+            <p>Rinde 72 tazas</p>
+            <span class="price-tag">$3.90 c/u</span>
+            <button class="add-to-cart" data-name="Minerva Clásico (360g)" data-price="3.90"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card cafe">
             <div class="product-img"><i class="fa-solid fa-mug-hot"></i></div>
-            <h3>Minerva Clásico (1000g)[cite: 1]</h3>
-            <p>Rinde 200 tazas[cite: 1]</p>
-            <span class="price">$13.11 ctvs la Unidad[cite: 1]</span>
+            <h3>Minerva Clásico (1000g)</h3>
+            <p>Rinde 200 tazas</p>
+            <span class="price-tag">$13.11 c/u</span>
+            <button class="add-to-cart" data-name="Minerva Clásico (1000g)" data-price="13.11"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card cafe">
             <div class="product-img"><i class="fa-solid fa-box-open"></i></div>
-            <h3>Tirilla Minerva Clásico[cite: 1]</h3>
-            <p>7g - 14 Sachets[cite: 1]</p>
-            <span class="price">VALOR: $2.90 ctvs la Tirilla[cite: 1]</span>
+            <h3>Tirilla Minerva Clásico</h3>
+            <p>7g - 14 Sachets</p>
+            <span class="price-tag">$2.90 la tirilla</span>
+            <button class="add-to-cart" data-name="Tirilla Minerva Clásico" data-price="2.90"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
         <!-- SNACKS -->
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Pipas Mega Ácida (120g)[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 2.00[cite: 1]</span>
+            <h3>Pipas Mega Ácida (120g)</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$2.00</span>
+            <button class="add-to-cart" data-name="Pipas Mega Ácida (Paquete x10)" data-price="2.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Pipas Mega Verde (120g)[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 2.00[cite: 1]</span>
+            <h3>Pipas Mega Verde (120g)</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$2.00</span>
+            <button class="add-to-cart" data-name="Pipas Mega Verde (Paquete x10)" data-price="2.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Pipas Mega Maracuyá (120g)[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 2.00[cite: 1]</span>
+            <h3>Pipas Mega Maracuyá (120g)</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$2.00</span>
+            <button class="add-to-cart" data-name="Pipas Mega Maracuyá (Paquete x10)" data-price="2.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Pipas Mega Mango Biche (120g)[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 2.00[cite: 1]</span>
+            <h3>Pipas Mega Mango Biche (120g)</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$2.00</span>
+            <button class="add-to-cart" data-name="Pipas Mega Mango Biche (Paquete x10)" data-price="2.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Mega Limón Mix (2g)[cite: 1]</h3>
-            <p>Maracuyá y Limón (x40)[cite: 1]</p>
-            <span class="price">VALOR: 1.25[cite: 1]</span>
+            <h3>Mega Limón Mix (2g)</h3>
+            <p>Maracuyá y Limón (x40)</p>
+            <span class="price-tag">$1.25</span>
+            <button class="add-to-cart" data-name="Mega Limón Mix (Paquete x40)" data-price="1.25"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Rizadas Limón (18g)[cite: 1]</h3>
-            <p>Paquete x12[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>Rizadas Limón</h3>
+            <p>Paquete x12</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="Rizadas Limón (Paquete x12)" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Rizadas Mayonesa (18g)[cite: 1]</h3>
-            <p>Paquete x12[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>Rizadas Mayonesa</h3>
+            <p>Paquete x12</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="Rizadas Mayonesa (Paquete x12)" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>El Golpe Limón Picante (50g)[cite: 1]</h3>
-            <p>Snack individual[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>El Golpe Limón Picante</h3>
+            <p>Paquete grande</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="El Golpe Limón Picante" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>El Golpe Queso (50g)[cite: 1]</h3>
-            <p>Snack individual[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>El Golpe Queso</h3>
+            <p>Paquete grande</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="El Golpe Queso" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>El Golpe Ranchero (50g)[cite: 1]</h3>
-            <p>Snack individual[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>El Golpe Ranchero</h3>
+            <p>Paquete grande</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="El Golpe Ranchero" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Tatos Limón Picante (30g)[cite: 1]</h3>
-            <p>Paquete x12[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>Tatos Limón Picante</h3>
+            <p>Paquete x12</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="Tatos Limón Picante (Paquete x12)" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card snacks">
             <div class="product-img"><i class="fa-solid fa-cookie-bite"></i></div>
-            <h3>Tatos Queso (27g)[cite: 1]</h3>
-            <p>Paquete x12[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>Tatos Queso</h3>
+            <p>Paquete x12</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="Tatos Queso (Paquete x12)" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
         <!-- HOGAR Y ABARROTES -->
         <div class="product-card hogar">
             <div class="product-img"><i class="fa-solid fa-mosquito"></i></div>
-            <h3>Zenden Incienso Espiral[cite: 1]</h3>
-            <p>Mata Mosquitos[cite: 1]</p>
-            <span class="price">VALOR: 0.80[cite: 1]</span>
+            <h3>Zenden Incienso Espiral</h3>
+            <p>Mata Mosquitos</p>
+            <span class="price-tag">$0.80</span>
+            <button class="add-to-cart" data-name="Zenden Incienso Espiral" data-price="0.80"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card hogar">
             <div class="product-img"><i class="fa-regular fa-lightbulb"></i></div>
-            <h3>Tauros Foco LED 9W[cite: 1]</h3>
-            <p>Alta Potencia[cite: 1]</p>
-            <span class="price">VALOR: 0.65[cite: 1]</span>
+            <h3>Tauros Foco LED 9W</h3>
+            <p>Alta Potencia</p>
+            <span class="price-tag">$0.65</span>
+            <button class="add-to-cart" data-name="Tauros Foco LED 9W" data-price="0.65"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
         <!-- BEBIDAS -->
         <div class="product-card bebidas">
             <div class="product-img"><i class="fa-solid fa-bolt"></i></div>
-            <h3>220V Sabor Original[cite: 1]</h3>
-            <p>Bebida Energizante 130 ml[cite: 1]</p>
-            <span class="price">VALOR: 5.25[cite: 1]</span>
+            <h3>220V Sabor Original</h3>
+            <p>Paquete / Display</p>
+            <span class="price-tag">$5.25</span>
+            <button class="add-to-cart" data-name="220V Original" data-price="5.25"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card bebidas">
             <div class="product-img"><i class="fa-solid fa-glass-water"></i></div>
-            <h3>Imperial Agua Mineral (Limón)[cite: 1]</h3>
-            <p>1500 ml[cite: 1]</p>
-            <span class="price">VALOR: 1.22 (x6: 7.32)[cite: 1]</span>
+            <h3>Imperial Agua Mineral (Limón)</h3>
+            <p>1500 ml</p>
+            <span class="price-tag">$1.22</span>
+            <button class="add-to-cart" data-name="Imperial Agua Limón 1.5L" data-price="1.22"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card bebidas">
             <div class="product-img"><i class="fa-solid fa-glass-water"></i></div>
-            <h3>Imperial Agua Mineral (Toronja)[cite: 1]</h3>
-            <p>1500 ml[cite: 1]</p>
-            <span class="price">VALOR: 1.22 (x6: 7.32)[cite: 1]</span>
+            <h3>Imperial Agua Mineral (Toronja)</h3>
+            <p>1500 ml</p>
+            <span class="price-tag">$1.22</span>
+            <button class="add-to-cart" data-name="Imperial Agua Toronja 1.5L" data-price="1.22"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card bebidas">
             <div class="product-img"><i class="fa-solid fa-glass-water"></i></div>
-            <h3>Imperial Agua Mineral (Mandarina)[cite: 1]</h3>
-            <p>1500 ml[cite: 1]</p>
-            <span class="price">VALOR: 1.22 (x6: 7.32)[cite: 1]</span>
+            <h3>Imperial Agua Mineral (Mandarina)</h3>
+            <p>1500 ml</p>
+            <span class="price-tag">$1.22</span>
+            <button class="add-to-cart" data-name="Imperial Agua Mandarina 1.5L" data-price="1.22"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
         <!-- CUIDADO PERSONAL -->
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-leaf"></i></div>
-            <h3>Nosotras Toallas Básica Natural[cite: 1]</h3>
-            <p>Con Alas x10[cite: 1]</p>
-            <span class="price">VALOR: 0.95[cite: 1]</span>
+            <h3>Nosotras Básica Natural</h3>
+            <p>Con Alas x10</p>
+            <span class="price-tag">$0.95</span>
+            <button class="add-to-cart" data-name="Nosotras Básica Natural (x10)" data-price="0.95"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-leaf"></i></div>
-            <h3>Nosotras Toallas Clásica Normal[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 0.85[cite: 1]</span>
+            <h3>Nosotras Clásica Normal</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$0.85</span>
+            <button class="add-to-cart" data-name="Nosotras Clásica Normal (x10)" data-price="0.85"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-spa"></i></div>
-            <h3>Ellas Toalla Higiénica Económica[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 0.65[cite: 1]</span>
+            <h3>Ellas Toalla Económica</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$0.65</span>
+            <button class="add-to-cart" data-name="Ellas Toalla Económica (x10)" data-price="0.65"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-spa"></i></div>
-            <h3>Ellas Protector Diario Anatómico Flexible[cite: 1]</h3>
-            <p>Paquete x30[cite: 1]</p>
-            <span class="price">VALOR: 1.35[cite: 1]</span>
+            <h3>Ellas Protectores Anatómicos</h3>
+            <p>Paquete x30</p>
+            <span class="price-tag">$1.35</span>
+            <button class="add-to-cart" data-name="Ellas Protectores Anatómicos (x30)" data-price="1.35"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-spa"></i></div>
-            <h3>Ellas Protectores Diarios Flexibles[cite: 1]</h3>
-            <p>Paquete x15[cite: 1]</p>
-            <span class="price">VALOR: 0.75[cite: 1]</span>
+            <h3>Ellas Protectores Flexibles</h3>
+            <p>Paquete x15</p>
+            <span class="price-tag">$0.75</span>
+            <button class="add-to-cart" data-name="Ellas Protectores Flexibles (x15)" data-price="0.75"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-pump-soap"></i></div>
-            <h3>Ellas Jabón Íntimo[cite: 1]</h3>
-            <p>200 ml[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>Ellas Jabón Íntimo</h3>
+            <p>200 ml</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="Ellas Jabón Íntimo 200ml" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-spray-can"></i></div>
-            <h3>Rexona Sachet Nutritive (Mujer)[cite: 1]</h3>
-            <p>Con tapa x10 (10g)[cite: 1]</p>
-            <span class="price">VALOR: 2.39[cite: 1]</span>
+            <h3>Rexona Sachet Mujer</h3>
+            <p>Con tapa x10</p>
+            <span class="price-tag">$2.39</span>
+            <button class="add-to-cart" data-name="Rexona Sachet Mujer (x10)" data-price="2.39"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-spray-can"></i></div>
-            <h3>Rexona Men V8 Sachet[cite: 1]</h3>
-            <p>Paquete x10 (8.5g)[cite: 1]</p>
-            <span class="price">VALOR: 2.39[cite: 1]</span>
+            <h3>Rexona Sachet Men V8</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$2.39</span>
+            <button class="add-to-cart" data-name="Rexona Sachet Men V8 (x10)" data-price="2.39"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-spray-can"></i></div>
-            <h3>Rexona Clinical Men Sachet[cite: 1]</h3>
-            <p>Paquete x10 (6.5g)[cite: 1]</p>
-            <span class="price">VALOR: 2.39[cite: 1]</span>
+            <h3>Rexona Clinical Men Sachet</h3>
+            <p>Paquete x10</p>
+            <span class="price-tag">$2.39</span>
+            <button class="add-to-cart" data-name="Rexona Clinical Men Sachet (x10)" data-price="2.39"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-bottle-droplet"></i></div>
-            <h3>Sedal Sachet Shampoo Zero Caspa[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>Sedal Shampoo Zero Caspa</h3>
+            <p>Paquete x10 Sachets</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="Sedal Shampoo Zero Caspa (x10)" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card personal">
             <div class="product-img"><i class="fa-solid fa-bottle-droplet"></i></div>
-            <h3>Sedal Sachet Crema para Peinar[cite: 1]</h3>
-            <p>Paquete x10[cite: 1]</p>
-            <span class="price">VALOR: 2.50[cite: 1]</span>
+            <h3>Sedal Crema para Peinar</h3>
+            <p>Paquete x10 Sachets</p>
+            <span class="price-tag">$2.50</span>
+            <button class="add-to-cart" data-name="Sedal Crema para Peinar (x10)" data-price="2.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
         <!-- MASCOTAS -->
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-cat"></i></div>
-            <h3>Chiki[cite: 1]</h3>
-            <p>Sabor a Pollo y Pescado (18 kg)[cite: 1]</p>
-            <span class="price">VALOR: 31.00[cite: 1]</span>
+            <h3>Chiki</h3>
+            <p>Sabor Pollo y Pescado (18 kg)</p>
+            <span class="price-tag">$31.00</span>
+            <button class="add-to-cart" data-name="Chiki Gatos (18 kg)" data-price="31.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-dog"></i></div>
-            <h3>Pro-can Adultos (Pollo)[cite: 1]</h3>
-            <p>Sabor a Pollo (30 kg)[cite: 1]</p>
-            <span class="price">VALOR: 40.00[cite: 1]</span>
+            <h3>Pro-can Adultos (Pollo)</h3>
+            <p>Sabor a Pollo (30 kg)</p>
+            <span class="price-tag">$40.00</span>
+            <button class="add-to-cart" data-name="Pro-can Adultos Pollo (30 kg)" data-price="40.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-dog"></i></div>
-            <h3>Pro-can Adultos (Carne)[cite: 1]</h3>
-            <p>Sabor a Carne (30 kg)[cite: 1]</p>
-            <span class="price">VALOR: 40.00[cite: 1]</span>
+            <h3>Pro-can Adultos (Carne)</h3>
+            <p>Sabor a Carne (30 kg)</p>
+            <span class="price-tag">$40.00</span>
+            <button class="add-to-cart" data-name="Pro-can Adultos Carne (30 kg)" data-price="40.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-paw"></i></div>
-            <h3>Pro-can Cachorros[cite: 1]</h3>
-            <p>Sabor a Pollo (30 kg)[cite: 1]</p>
-            <span class="price">VALOR: 49.00 / 51.00[cite: 1]</span>
+            <h3>Pro-can Cachorros</h3>
+            <p>Sabor a Pollo (30 kg)</p>
+            <span class="price-tag">$51.00</span>
+            <button class="add-to-cart" data-name="Pro-can Cachorros (30 kg)" data-price="51.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-bone"></i></div>
-            <h3>Compa Adultos[cite: 1]</h3>
-            <p>Sabor a Pollo (30 kg)[cite: 1]</p>
-            <span class="price">VALOR: 27.00[cite: 1]</span>
+            <h3>Compa Adultos</h3>
+            <p>Sabor a Pollo (30 kg)</p>
+            <span class="price-tag">$27.00</span>
+            <button class="add-to-cart" data-name="Compa Adultos (30 kg)" data-price="27.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-cat"></i></div>
-            <h3>Michu[cite: 1]</h3>
-            <p>Sabor a Pollo (18 kg)[cite: 1]</p>
-            <span class="price">VALOR: 31.00[cite: 1]</span>
+            <h3>Michu</h3>
+            <p>Sabor a Pollo (18 kg)</p>
+            <span class="price-tag">$31.00</span>
+            <button class="add-to-cart" data-name="Michu Gatos (18 kg)" data-price="31.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-dog"></i></div>
-            <h3>BalanCAN[cite: 1]</h3>
-            <p>Sabor a Pollo (30 kg)[cite: 1]</p>
-            <span class="price">VALOR: 28.00[cite: 1]</span>
+            <h3>BalanCAN</h3>
+            <p>Sabor a Pollo (30 kg)</p>
+            <span class="price-tag">$28.00</span>
+            <button class="add-to-cart" data-name="BalanCAN (30 kg)" data-price="28.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-cat"></i></div>
-            <h3>BalanCAT[cite: 1]</h3>
-            <p>Sabor a Pollo (18 kg)[cite: 1]</p>
-            <span class="price">VALOR: 26.25[cite: 1]</span>
+            <h3>BalanCAT</h3>
+            <p>Sabor a Pollo (18 kg)</p>
+            <span class="price-tag">$26.25</span>
+            <button class="add-to-cart" data-name="BalanCAT (18 kg)" data-price="26.25"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card mascotas">
             <div class="product-img"><i class="fa-solid fa-paw"></i></div>
-            <h3>Buen Can Cachorros[cite: 1]</h3>
-            <p>Pollo y Yogurt (4 kg)[cite: 1]</p>
-            <span class="price">Consultar[cite: 1]</span>
+            <h3>Buen Can Cachorros</h3>
+            <p>Pollo y Yogurt (4 kg)</p>
+            <span class="price-tag">Consultar Precio</span>
+            <!-- Cuando el precio no se sabe, mandamos 0 en el código para que no rompa la suma -->
+            <button class="add-to-cart" data-name="Buen Can Cachorros (4 kg)" data-price="0"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
         <!-- ARROZ -->
         <div class="product-card arroz">
             <div class="product-img"><i class="fa-solid fa-wheat-awn"></i></div>
-            <h3>Arroz Flor Superior[cite: 1]</h3>
-            <p>1 Quintal (100 libras)[cite: 1]</p>
-            <span class="price">VALOR: 32.00[cite: 1]</span>
+            <h3>Arroz Flor Superior (Quintal)</h3>
+            <p>100 libras</p>
+            <span class="price-tag">$32.00</span>
+            <button class="add-to-cart" data-name="Arroz Flor Quintal" data-price="32.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card arroz">
             <div class="product-img"><i class="fa-solid fa-wheat-awn"></i></div>
-            <h3>Arroz Flor Superior (Arroba)[cite: 1]</h3>
-            <p>1 Arroba (25 libras)[cite: 1]</p>
-            <span class="price">VALOR: 7.80[cite: 1]</span>
+            <h3>Arroz Flor Superior (Arroba)</h3>
+            <p>25 libras</p>
+            <span class="price-tag">$7.80</span>
+            <button class="add-to-cart" data-name="Arroz Flor Arroba" data-price="7.80"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card arroz">
             <div class="product-img"><i class="fa-solid fa-wheat-awn"></i></div>
-            <h3>Arroz Conejo[cite: 1]</h3>
-            <p>1 Quintal (100 libras)[cite: 1]</p>
-            <span class="price">VALOR: 29.00[cite: 1]</span>
+            <h3>Arroz Conejo (Quintal)</h3>
+            <p>100 libras</p>
+            <span class="price-tag">$29.00</span>
+            <button class="add-to-cart" data-name="Arroz Conejo Quintal" data-price="29.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card arroz">
             <div class="product-img"><i class="fa-solid fa-wheat-awn"></i></div>
-            <h3>Arroz Conejo (Arroba)[cite: 1]</h3>
-            <p>1 Arroba (25 libras)[cite: 1]</p>
-            <span class="price">VALOR: 6.50[cite: 1]</span>
+            <h3>Arroz Conejo (Arroba)</h3>
+            <p>25 libras</p>
+            <span class="price-tag">$6.50</span>
+            <button class="add-to-cart" data-name="Arroz Conejo Arroba" data-price="6.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card arroz">
             <div class="product-img"><i class="fa-solid fa-wheat-awn"></i></div>
-            <h3>Arroz Gloria Matilde[cite: 1]</h3>
-            <p>1 Quintal (100 libras)[cite: 1]</p>
-            <span class="price">VALOR: 43.50[cite: 1]</span>
+            <h3>Arroz Gloria Matilde (Quintal)</h3>
+            <p>100 libras</p>
+            <span class="price-tag">$43.50</span>
+            <button class="add-to-cart" data-name="Arroz Gloria Matilde Quintal" data-price="43.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card arroz">
             <div class="product-img"><i class="fa-solid fa-wheat-awn"></i></div>
-            <h3>Arroz Gloria Matilde (Arroba)[cite: 1]</h3>
-            <p>1 Arroba (25 libras)[cite: 1]</p>
-            <span class="price">VALOR: 11.00[cite: 1]</span>
+            <h3>Arroz Gloria Matilde (Arroba)</h3>
+            <p>25 libras</p>
+            <span class="price-tag">$11.00</span>
+            <button class="add-to-cart" data-name="Arroz Gloria Matilde Arroba" data-price="11.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
         <!-- LICORES -->
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-martini-glass-citrus"></i></div>
-            <h3>Cristal Colors[cite: 1]</h3>
-            <p>Tamarindo Loco, Fashion Cherry, Bomb Peach, Crazy Mango, Bikini Paradise, Passion Fruit, Naranjilla Crush (750 ml)[cite: 1]</p>
-            <span class="price">VALOR: 4.00[cite: 1]</span>
+            <h3>Cristal Colors (Varios)</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$4.00</span>
+            <button class="add-to-cart" data-name="Cristal Colors 750ml" data-price="4.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-cocktail"></i></div>
-            <h3>Licores de la Tierrita[cite: 1]</h3>
-            <p>Coco, Capuchino, Tamarindo[cite: 1]</p>
-            <span class="price">VALOR: 0.80[cite: 1]</span>
+            <h3>Licores de la Tierrita</h3>
+            <p>Coco, Capuchino, Tamarindo</p>
+            <span class="price-tag">$0.80</span>
+            <button class="add-to-cart" data-name="Licores de la Tierrita" data-price="0.80"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-whiskey-glass"></i></div>
-            <h3>Cristal Ardiente[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">VALOR: 6.70[cite: 1]</span>
+            <h3>Cristal Ardiente</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$6.70</span>
+            <button class="add-to-cart" data-name="Cristal Ardiente 750ml" data-price="6.70"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-whiskey-glass"></i></div>
-            <h3>Cristal Clásico[cite: 1]</h3>
-            <p>375 ml[cite: 1]</p>
-            <span class="price">VALOR: 3.25[cite: 1]</span>
+            <h3>Cristal Clásico</h3>
+            <p>375 ml</p>
+            <span class="price-tag">$3.25</span>
+            <button class="add-to-cart" data-name="Cristal Clásico 375ml" data-price="3.25"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-wine-bottle"></i></div>
-            <h3>Cristal Cañero[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">VALOR: 5.90[cite: 1]</span>
+            <h3>Cristal Cañero</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$5.90</span>
+            <button class="add-to-cart" data-name="Cristal Cañero 750ml" data-price="5.90"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-wine-bottle"></i></div>
-            <h3>Cristal Cañero[cite: 1]</h3>
-            <p>375 ml[cite: 1]</p>
-            <span class="price">VALOR: 2.85[cite: 1]</span>
+            <h3>Cristal Cañero</h3>
+            <p>375 ml</p>
+            <span class="price-tag">$2.85</span>
+            <button class="add-to-cart" data-name="Cristal Cañero 375ml" data-price="2.85"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-wine-bottle"></i></div>
-            <h3>Red y Black Williams Whisky[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">Consultar[cite: 1]</span>
+            <h3>Red / Black Williams Whisky</h3>
+            <p>750 ml</p>
+            <span class="price-tag">Consultar Precio</span>
+            <button class="add-to-cart" data-name="Williams Whisky (Red/Black)" data-price="0"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-bottle-water"></i></div>
-            <h3>Norteño[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">VALOR: 6.15[cite: 1]</span>
+            <h3>Norteño</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$6.15</span>
+            <button class="add-to-cart" data-name="Norteño 750ml" data-price="6.15"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-wine-glass"></i></div>
-            <h3>Vino Tinto El Fraile[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">VALOR: 3.40[cite: 1]</span>
+            <h3>Vino Tinto El Fraile</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$3.40</span>
+            <button class="add-to-cart" data-name="Vino Tinto El Fraile 750ml" data-price="3.40"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-champagne-glasses"></i></div>
-            <h3>Anthony Vinos[cite: 1]</h3>
-            <p>Fresa, Frambuesa, Mora (750 ml)[cite: 1]</p>
-            <span class="price">VALOR: 6.90[cite: 1]</span>
+            <h3>Anthony Vinos (Botella)</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$6.90</span>
+            <button class="add-to-cart" data-name="Anthony Vinos 750ml" data-price="6.90"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-beer-mug-empty"></i></div>
-            <h3>Anthony Vinos (Lata)[cite: 1]</h3>
-            <p>Fresa, Frambuesa, Mora (250 ml)[cite: 1]</p>
-            <span class="price">VALOR: 1.45[cite: 1]</span>
+            <h3>Anthony Vinos (Lata)</h3>
+            <p>250 ml</p>
+            <span class="price-tag">$1.45</span>
+            <button class="add-to-cart" data-name="Anthony Vinos Lata 250ml" data-price="1.45"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-wine-bottle"></i></div>
-            <h3>Buchanan's Deluxe[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">VALOR: 48.50[cite: 1]</span>
+            <h3>Buchanan's Deluxe</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$48.50</span>
+            <button class="add-to-cart" data-name="Buchanan's Deluxe 750ml" data-price="48.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-wine-glass"></i></div>
-            <h3>Tocornal Red Blend[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">VALOR: 6.50[cite: 1]</span>
+            <h3>Tocornal Red Blend</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$6.50</span>
+            <button class="add-to-cart" data-name="Tocornal Red Blend 750ml" data-price="6.50"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-whiskey-glass"></i></div>
-            <h3>Johnnie Walker Red Label[cite: 1]</h3>
-            <p>750 ml[cite: 1]</p>
-            <span class="price">VALOR: 19.90[cite: 1]</span>
+            <h3>Johnnie Walker Red Label</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$19.90</span>
+            <button class="add-to-cart" data-name="Johnnie Walker Red Label 750ml" data-price="19.90"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-whiskey-glass"></i></div>
-            <h3>Black & White[cite: 1]</h3>
-            <p>Whisky 750 ml[cite: 1]</p>
-            <span class="price">VALOR: 14.00[cite: 1]</span>
+            <h3>Black & White Whisky</h3>
+            <p>750 ml</p>
+            <span class="price-tag">$14.00</span>
+            <button class="add-to-cart" data-name="Black & White 750ml" data-price="14.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-bottle-droplet"></i></div>
-            <h3>Smirnoff Spicy Tamarindo[cite: 1]</h3>
-            <p>Licor de Vodka 750 ml[cite: 1]</p>
-            <span class="price">VALOR: 13.00[cite: 1]</span>
+            <h3>Smirnoff Spicy Tamarindo</h3>
+            <p>Licor de Vodka 750 ml</p>
+            <span class="price-tag">$13.00</span>
+            <button class="add-to-cart" data-name="Smirnoff Spicy Tamarindo 750ml" data-price="13.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-wine-bottle"></i></div>
-            <h3>Special Queen[cite: 1]</h3>
-            <p>700 ml[cite: 1]</p>
-            <span class="price">VALOR: 4.80[cite: 1]</span>
+            <h3>Special Queen</h3>
+            <p>700 ml</p>
+            <span class="price-tag">$4.80</span>
+            <button class="add-to-cart" data-name="Special Queen 700ml" data-price="4.80"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-martini-glass"></i></div>
-            <h3>Cherish Café[cite: 1]</h3>
-            <p>Crema de Whisky 750 ml[cite: 1]</p>
-            <span class="price">VALOR: 12.00[cite: 1]</span>
+            <h3>Cherish Café</h3>
+            <p>Crema de Whisky 750 ml</p>
+            <span class="price-tag">$12.00</span>
+            <button class="add-to-cart" data-name="Cherish Café 750ml" data-price="12.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
     </main>
 
-    <!-- Botones de WhatsApp Flotantes -->
-    <div class="fab-container">
-        <p class="fab-text">¡Cotiza aquí!</p>
-        <a href="https://wa.me/593963664620" target="_blank" class="fab-btn">
-            <i class="fa-brands fa-whatsapp"></i> 0963664620
-        </a>
-        <a href="https://wa.me/593967860421" target="_blank" class="fab-btn">
-            <i class="fa-brands fa-whatsapp"></i> 0967860421
-        </a>
+    <!-- Modal del Carrito -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart" id="close-cart">&times;</span>
+            <h2>🛒 Tu Pedido</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Aquí se inyectan los productos agregados -->
+            </div>
+            <div class="cart-footer">
+                <h3>Total Estimado: $<span id="cart-total">0.00</span></h3>
+                <p class="nota">*Productos sin precio fijo se cotizarán por chat.</p>
+                <button class="checkout-btn" id="checkout-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar pedido a WhatsApp
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- Mensaje si no hay resultados -->
