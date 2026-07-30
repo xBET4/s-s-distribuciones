@@ -17,10 +17,7 @@
             <p>La mejor calidad del mercado la encuentras aquí.</p>
         </div>
         <div class="header-actions">
-            <button id="cart-btn" class="cart-btn">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cart-count" class="cart-count">0</span>
-            </button>
+            <!-- El carrito ya no está aquí, ahora flota -->
             <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button>
         </div>
     </header>
@@ -358,7 +355,6 @@
             <h3>Buen Can Cachorros</h3>
             <p>Pollo y Yogurt (4 kg)</p>
             <span class="price-tag">Consultar Precio</span>
-            <!-- Cuando el precio no se sabe, mandamos 0 en el código para que no rompa la suma -->
             <button class="add-to-cart" data-name="Buen Can Cachorros (4 kg)" data-price="0"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
 
@@ -407,8 +403,6 @@
         </div>
 
         <!-- LICORES -->
-        
-        <!-- ESTOS DOS AHORA ABREN LA VENTANA DE SABORES -->
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-martini-glass-citrus"></i></div>
             <h3>Cristal Colors</h3>
@@ -423,8 +417,6 @@
             <span class="price-tag">$0.80</span>
             <button class="open-variant-modal" data-name="Licor de la Tierrita" data-price="0.80" data-options="Sabor a Coco,Sabor a Capuchino,Sabor a Tamarindo"><i class="fa-solid fa-list-ul"></i> Elegir Sabor</button>
         </div>
-        <!-- ============================================== -->
-
         <div class="product-card licores">
             <div class="product-img"><i class="fa-solid fa-whiskey-glass"></i></div>
             <h3>Cristal Ardiente</h3>
@@ -538,6 +530,23 @@
             <button class="add-to-cart" data-name="Cherish Café 750ml" data-price="12.00"><i class="fa-solid fa-cart-plus"></i> Agregar</button>
         </div>
     </main>
+
+    <!-- Botón de Carrito Flotante (NUEVO) -->
+    <button id="cart-btn" class="floating-cart-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count" class="cart-count">0</span>
+    </button>
+
+    <!-- Botones de WhatsApp Flotantes -->
+    <div class="fab-container">
+        <p class="fab-text">¡Cotiza aquí!</p>
+        <a href="https://wa.me/593963664620" target="_blank" class="fab-btn">
+            <i class="fa-brands fa-whatsapp"></i> 0963664620
+        </a>
+        <a href="https://wa.me/593967860421" target="_blank" class="fab-btn">
+            <i class="fa-brands fa-whatsapp"></i> 0967860421
+        </a>
+    </div>
 
     <!-- Modal del Carrito -->
     <div class="cart-modal" id="cart-modal">
