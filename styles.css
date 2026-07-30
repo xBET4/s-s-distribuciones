@@ -229,6 +229,21 @@ header {
 
 .checkout-btn:hover { background-color: #128C7E; }
 
+<!-- Modal para Elegir Sabor -->
+    <div class="cart-modal" id="variant-modal">
+        <div class="cart-content" style="max-width: 400px; text-align: center;">
+            <span class="close-cart" id="close-variant">&times;</span>
+            <h2 style="margin-bottom: 10px;">🍾 Elige el sabor</h2>
+            <h3 id="variant-product-name" style="color: var(--accent-color); margin-bottom: 20px; font-size: 1.1rem;"></h3>
+            
+            <select id="variant-select" style="width: 100%; padding: 12px; font-size: 1rem; margin-bottom: 20px; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--bg-color); color: var(--text-color); outline: none;">
+                <!-- Las opciones se inyectan solas desde el JavaScript -->
+            </select>
+            
+            <button class="add-to-cart" id="confirm-variant-btn"><i class="fa-solid fa-cart-plus"></i> Confirmar y Agregar</button>
+        </div>
+    </div>
+
 /* Varios */
 .no-results { display: flex; flex-direction: column; align-items: center; padding: 4rem 2rem; font-size: 1.2rem; color: #888; grid-column: 1 / -1; }
 .hide { display: none !important; }
